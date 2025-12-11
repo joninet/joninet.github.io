@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto - ActivaPro | Jonathan Desplats</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Jonathan<span>Desplats</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#sobre-mi">Sobre Mí</a></li>
+                <li><a href="index.html#habilidades">Habilidades</a></li>
+                <li><a href="index.html#proyectos">Proyectos</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header del Proyecto -->
+    <section class="project-header">
+        <div class="project-header-content">
+            <h1>ActivaPro</h1>
+            <p class="subtitle">Aplicación web para entrenadores deportivos</p>
+            <div class="project-meta">
+                <div class="meta-item">
+                    <strong>Estado:</strong>
+                    <span>Completado</span>
+                </div>
+                <div class="meta-item">
+                    <strong>Fecha:</strong>
+                    <span>2023 - 2024</span>
+                </div>
+                <div class="meta-item">
+                    <strong>Equipo:</strong>
+                    <span>Individual</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="project-gallery">
+        <div class="gallery-container">
+            <div class="gallery-main">
+                <img id="mainImage" src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=500&fit=crop" alt="ActivaPro Dashboard">
+            </div>
+            <div class="gallery-thumbs">
+                <div class="gallery-thumb active" onclick="changeImage(this)">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=200&h=200&fit=crop" alt="Dashboard">
+                </div>
+                <div class="gallery-thumb" onclick="changeImage(this)">
+                    <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=200&h=200&fit=crop" alt="Gestión de clientes">
+                </div>
+                <div class="gallery-thumb" onclick="changeImage(this)">
+                    <img src="https://images.unsplash.com/photo-1574374522282-ffd6a56f1b5b?w=200&h=200&fit=crop" alt="Seguimiento de progreso">
+                </div>
+                <div class="gallery-thumb" onclick="changeImage(this)">
+                    <img src="https://images.unsplash.com/photo-1460925895917-adf4e566c72a?w=200&h=200&fit=crop" alt="Reportes">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <section class="project-content">
+        <!-- Descripción general -->
+        <div class="project-section">
+            <h2><i class="fas fa-info-circle"></i> Descripción del Proyecto</h2>
+            <p>
+                ActivaPro es una aplicación web completa diseñada para entrenadores personales y profesionales del fitness. 
+                Permite gestionar de manera eficiente a los clientes, crear rutinas de entrenamiento personalizadas, 
+                registrar el seguimiento del progreso y generar reportes detallados del desempeño.
+            </p>
+            <p>
+                La plataforma combina un backend robusto con Django REST Framework y una interfaz moderna desarrollada en React, 
+                proporcionando una experiencia de usuario fluida y receptiva en todos los dispositivos.
+            </p>
+        </div>
+
+        <!-- Stack tecnológico -->
+        <div class="project-section">
+            <h2><i class="fas fa-cogs"></i> Stack Tecnológico</h2>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <h4><i class="fab fa-python"></i> Backend</h4>
+                    <ul>
+                        <li>Django 4.2</li>
+                        <li>Django REST Framework</li>
+                        <li>Django Celery</li>
+                        <li>PostgreSQL</li>
+                    </ul>
+                </div>
+                <div class="tech-item">
+                    <h4><i class="fab fa-react"></i> Frontend</h4>
+                    <ul>
+                        <li>React 18</li>
+                        <li>Redux Toolkit</li>
+                        <li>Axios</li>
+                        <li>Tailwind CSS</li>
+                    </ul>
+                </div>
+                <div class="tech-item">
+                    <h4><i class="fas fa-server"></i> Infraestructura</h4>
+                    <ul>
+                        <li>Docker & Docker Compose</li>
+                        <li>AWS EC2</li>
+                        <li>Nginx</li>
+                        <li>GitHub Actions</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Características principales -->
+        <div class="project-section">
+            <h2><i class="fas fa-star"></i> Características Principales</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Gestión de Clientes</h4>
+                    <p>Sistema completo para gestionar datos de clientes, historial médico y objetivos personales.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-dumbbell"></i>
+                    <h4>Rutinas Personalizadas</h4>
+                    <p>Crea rutinas de entrenamiento adaptadas a cada cliente con ejercicios y progresiones.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Seguimiento de Progreso</h4>
+                    <p>Registra y visualiza el avance de tus clientes con gráficos detallados y métricas.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h4>Reportes Automáticos</h4>
+                    <p>Genera reportes en PDF con análisis del desempeño y recomendaciones.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-bell"></i>
+                    <h4>Notificaciones</h4>
+                    <p>Sistema de recordatorios para entrenamientos y seguimientos programados.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h4>Responsive Design</h4>
+                    <p>Acceso total desde cualquier dispositivo, escritorio, tablet o smartphone.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Desafíos y soluciones -->
+        <div class="project-section">
+            <h2><i class="fas fa-puzzle-piece"></i> Desafíos y Soluciones</h2>
+            <div class="challenges">
+                <div class="challenge-item">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Desafío: Sincronización en tiempo real</h4>
+                    <p class="solution">
+                        <strong>Solución:</strong> Implementé WebSockets con Django Channels para sincronización en tiempo real 
+                        entre entrenador y cliente, permitiendo actualizaciones instantáneas sin recargar la página.
+                    </p>
+                </div>
+                <div class="challenge-item">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Desafío: Exportación de reportes</h4>
+                    <p class="solution">
+                        <strong>Solución:</strong> Utilicé ReportLab y WeasyPrint para generar PDFs dinámicos con gráficos 
+                        de manera asíncrona usando Celery, mejorando el rendimiento.
+                    </p>
+                </div>
+                <div class="challenge-item">
+                    <h4><i class="fas fa-exclamation-triangle"></i> Desafío: Manejo de múltiples clientes</h4>
+                    <p class="solution">
+                        <strong>Solución:</strong> Implementé sistema de roles y permisos con Django Guardian, 
+                        con caché en Redis para optimizar las consultas de acceso.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resultados -->
+        <div class="project-section">
+            <h2><i class="fas fa-trophy"></i> Resultados y Impacto</h2>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-number">50+</div>
+                    <div class="result-label">Entrenamientos Creados</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">100%</div>
+                    <div class="result-label">Cobertura Responsiva</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">99.5%</div>
+                    <div class="result-label">Uptime</div>
+                </div>
+                <div class="result-card">
+                    <div class="result-number">< 2s</div>
+                    <div class="result-label">Tiempo de carga</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lo aprendido -->
+        <div class="project-section">
+            <h2><i class="fas fa-graduation-cap"></i> Aprendizajes Clave</h2>
+            <p>
+                <strong>Arquitectura de aplicaciones escalables:</strong> Aprendí a diseñar una arquitectura que pueda 
+                crecer sin problemas, utilizando microservicios y patrones de diseño sólidos.
+            </p>
+            <p>
+                <strong>Desarrollo full-stack:</strong> Gané experiencia valiosa en el desarrollo completo de una aplicación, 
+                desde la base de datos hasta la interfaz de usuario.
+            </p>
+            <p>
+                <strong>Optimización de rendimiento:</strong> Implementé técnicas de caché, compresión de datos y optimización 
+                de consultas para mejorar significativamente el rendimiento.
+            </p>
+            <p>
+                <strong>Testing y CI/CD:</strong> Establecí un pipeline de integración continua con pruebas automáticas 
+                que garantizan la calidad del código en cada despliegue.
+            </p>
+        </div>
+
+        <!-- Enlaces y CTA -->
+        <div class="project-section">
+            <h2><i class="fas fa-link"></i> Enlaces del Proyecto</h2>
+            <div class="project-links">
+                <a href="#" target="_blank">
+                    <i class="fab fa-github"></i> Ver Código en GitHub
+                </a>
+                <a href="#" target="_blank">
+                    <i class="fas fa-globe"></i> Demostración en Vivo
+                </a>
+                <a href="index.html#proyectos" class="secondary">
+                    <i class="fas fa-arrow-left"></i> Volver a Proyectos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/joninet" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/jonathan-desplats/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:jon.desplats@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2024 Jonathan Desplats. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
