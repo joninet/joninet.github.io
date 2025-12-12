@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum - Jonathan Desplats</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos específicos para CV */
+        .cv-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 4rem 2rem 2rem;
+            margin-top: 70px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .cv-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .cv-header-content {
+            position: relative;
+            z-index: 1;
+            max-width: 1200px;
+            margin: 0 auto;
+            color: var(--white);
+        }
+
+        .cv-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: var(--dark-light);
+            border: 4px solid var(--white);
+            margin: 0 auto 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--primary);
+        }
+
+        .cv-name {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-title {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+        }
+
+        .cv-contact {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .cv-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--white);
+            opacity: 0.9;
+        }
+
+        .cv-contact-item i {
+            color: var(--primary);
+        }
+
+        /* Contenido del CV */
+        .cv-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .cv-section {
+            margin-bottom: 3rem;
+            background: var(--dark-light);
+            border-radius: 15px;
+            padding: 2rem;
+            border: 1px solid var(--dark-lighter);
+        }
+
+        .cv-section h2 {
+            color: var(--white);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--dark-lighter);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cv-section h2 i {
+            color: var(--primary);
+        }
+
+        .cv-summary {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: var(--gray);
+            margin-bottom: 2rem;
+        }
+
+        .cv-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .cv-info-item {
+            background: var(--dark-lighter);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--dark-lighter);
+        }
+
+        .cv-info-item h4 {
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cv-info-item p {
+            color: var(--gray);
+            margin: 0.3rem 0;
+        }
+
+        .cv-skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .cv-skill-category {
+            background: var(--dark-lighter);
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 1px solid var(--dark-lighter);
+        }
+
+        .cv-skill-category h4 {
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .cv-skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .cv-skill-tag {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.4rem 0.8rem;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        .cv-projects {
+            display: grid;
+            gap: 2rem;
+        }
+
+        .cv-project-item {
+            background: var(--dark-lighter);
+            padding: 2rem;
+            border-radius: 10px;
+            border: 1px solid var(--dark-lighter);
+        }
+
+        .cv-project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .cv-project-title {
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cv-project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+
+        .cv-project-tech span {
+            background: var(--primary);
+            color: var(--white);
+            padding: 0.2rem 0.6rem;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+
+        .cv-project-description {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* Botón de descarga */
+        .cv-actions {
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .cv-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 1rem 2rem;
+            background: var(--gradient);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cv-download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cv-header {
+                padding: 3rem 1rem 2rem;
+            }
+
+            .cv-name {
+                font-size: 2rem;
+            }
+
+            .cv-photo {
+                width: 120px;
+                height: 120px;
+                font-size: 2.5rem;
+            }
+
+            .cv-contact {
+                gap: 1rem;
+            }
+
+            .cv-contact-item {
+                font-size: 0.9rem;
+            }
+
+            .cv-section {
+                padding: 1.5rem;
+            }
+
+            .cv-info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cv-skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Estilos para impresión PDF */
+        @media print {
+            body {
+                background: white !important;
+                color: black !important;
+            }
+
+            nav, .cv-actions, .menu-toggle {
+                display: none !important;
+            }
+
+            .cv-header {
+                background: white !important;
+                color: black !important;
+                margin-top: 0 !important;
+                padding: 2rem !important;
+            }
+
+            .cv-header::before {
+                display: none !important;
+            }
+
+            .cv-header-content {
+                color: black !important;
+            }
+
+            .cv-photo {
+                border-color: #333 !important;
+            }
+
+            .cv-section {
+                background: white !important;
+                border: 1px solid #ddd !important;
+                break-inside: avoid;
+            }
+
+            .cv-info-item, .cv-skill-category, .cv-project-item {
+                background: #f9f9f9 !important;
+                border: 1px solid #ddd !important;
+            }
+
+            .cv-skill-tag, .cv-project-tech span {
+                background: #333 !important;
+                color: white !important;
+            }
+
+            .cv-contact-item {
+                color: #333 !important;
+            }
+
+            .cv-contact-item i {
+                color: #666 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <div class="nav-container">
+            <a href="index.html" class="logo">Jonathan<span>Desplats</span></a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html#inicio">Inicio</a></li>
+                <li><a href="index.html#sobre-mi">Sobre Mí</a></li>
+                <li><a href="index.html#habilidades">Habilidades</a></li>
+                <li><a href="index.html#proyectos">Proyectos</a></li>
+                <li><a href="index.html#contacto">Contacto</a></li>
+                <li><a href="curriculum.html">Curriculum</a></li>
+            </ul>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header del CV -->
+    <section class="cv-header">
+        <div class="cv-header-content">
+            <div class="cv-photo">
+                <i class="fas fa-user"></i>
+            </div>
+            <h1 class="cv-name">Jonathan Desplats</h1>
+            <p class="cv-title">Backend Developer</p>
+            <div class="cv-contact">
+                <div class="cv-contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>jon.desplats@gmail.com</span>
+                </div>
+                <div class="cv-contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>+54 358 4642446</span>
+                </div>
+                <div class="cv-contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Río Cuarto, Córdoba, Argentina</span>
+                </div>
+                <div class="cv-contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <span>jonathan-desplats</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Botón de descarga -->
+    <div class="cv-actions">
+        <a href="CV_Desplats_Jonathan.pdf" download class="cv-download-btn">
+            <i class="fas fa-download"></i> Descargar Curriculum (PDF)
+        </a>
+    </div>
+
+    <!-- Contenido del CV -->
+    <section class="cv-content">
+        <!-- Resumen Profesional -->
+        <div class="cv-section">
+            <h2><i class="fas fa-user"></i> Resumen Profesional</h2>
+            <p class="cv-summary">
+                Desarrollador backend apasionado por crear soluciones web escalables y eficientes. Especializado en Python y Django,
+                siempre aprendiendo nuevas tecnologías y buscando oportunidades para crecer profesionalmente. Recientemente graduado
+                como Técnico en Desarrollo de Software, combino mi experiencia en liderazgo de equipos con mis habilidades técnicas
+                para crear aplicaciones robustas que resuelvan problemas reales.
+            </p>
+        </div>
+
+        <!-- Información Personal -->
+        <div class="cv-section">
+            <h2><i class="fas fa-info-circle"></i> Información Personal</h2>
+            <div class="cv-info-grid">
+                <div class="cv-info-item">
+                    <h4><i class="fas fa-birthday-cake"></i> Fecha de Nacimiento</h4>
+                    <p>07-09-1987</p>
+                </div>
+                <div class="cv-info-item">
+                    <h4><i class="fas fa-briefcase"></i> Disponibilidad</h4>
+                    <p>Backend Junior Developer</p>
+                </div>
+                <div class="cv-info-item">
+                    <h4><i class="fas fa-graduation-cap"></i> Educación</h4>
+                    <p>Técnico en Desarrollo de Software</p>
+                </div>
+                <div class="cv-info-item">
+                    <h4><i class="fas fa-language"></i> Idiomas</h4>
+                    <p>Español (Nativo)<br>Inglés (Básico)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Habilidades Técnicas -->
+        <div class="cv-section">
+            <h2><i class="fas fa-code"></i> Habilidades Técnicas</h2>
+            <div class="cv-skills-grid">
+                <div class="cv-skill-category">
+                    <h4><i class="fab fa-python"></i> Backend</h4>
+                    <div class="cv-skill-tags">
+                        <span class="cv-skill-tag">Python</span>
+                        <span class="cv-skill-tag">Django</span>
+                        <span class="cv-skill-tag">Django REST Framework</span>
+                        <span class="cv-skill-tag">Flask</span>
+                    </div>
+                </div>
+                <div class="cv-skill-category">
+                    <h4><i class="fas fa-database"></i> Bases de Datos</h4>
+                    <div class="cv-skill-tags">
+                        <span class="cv-skill-tag">PostgreSQL</span>
+                        <span class="cv-skill-tag">MySQL</span>
+                        <span class="cv-skill-tag">SQLite</span>
+                    </div>
+                </div>
+                <div class="cv-skill-category">
+                    <h4><i class="fas fa-tools"></i> Herramientas</h4>
+                    <div class="cv-skill-tags">
+                        <span class="cv-skill-tag">Git</span>
+                        <span class="cv-skill-tag">GitHub</span>
+                        <span class="cv-skill-tag">Docker</span>
+                        <span class="cv-skill-tag">Linux</span>
+                    </div>
+                </div>
+                <div class="cv-skill-category">
+                    <h4><i class="fas fa-code"></i> Frontend (Básico)</h4>
+                    <div class="cv-skill-tags">
+                        <span class="cv-skill-tag">HTML</span>
+                        <span class="cv-skill-tag">CSS</span>
+                        <span class="cv-skill-tag">JavaScript</span>
+                        <span class="cv-skill-tag">React</span>
+                    </div>
+                </div>
+                <div class="cv-skill-category">
+                    <h4><i class="fas fa-network-wired"></i> APIs & Otros</h4>
+                    <div class="cv-skill-tags">
+                        <span class="cv-skill-tag">API REST</span>
+                        <span class="cv-skill-tag">Aprendizaje continuo</span>
+                    </div>
+                </div>
+                <div class="cv-skill-category">
+                    <h4><i class="fas fa-users"></i> Habilidades Blandas</h4>
+                    <div class="cv-skill-tags">
+                        <span class="cv-skill-tag">Trabajo en equipo</span>
+                        <span class="cv-skill-tag">Liderazgo</span>
+                        <span class="cv-skill-tag">Resolución de problemas</span>
+                        <span class="cv-skill-tag">Adaptabilidad</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Proyectos Destacados -->
+        <div class="cv-section">
+            <h2><i class="fas fa-project-diagram"></i> Proyectos Destacados</h2>
+            <div class="cv-projects">
+                <div class="cv-project-item">
+                    <div class="cv-project-header">
+                        <div>
+                            <h3 class="cv-project-title">Sistema de Gestión de Aerolínea</h3>
+                            <p class="cv-project-description">
+                                Sistema completo para la gestión de vuelos, reservas y pasajeros desarrollado como proyecto académico.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cv-project-tech">
+                        <span>Django</span>
+                        <span>SQLite</span>
+                        <span>Python</span>
+                    </div>
+                </div>
+
+                <div class="cv-project-item">
+                    <div class="cv-project-header">
+                        <div>
+                            <h3 class="cv-project-title">ActivaPro</h3>
+                            <p class="cv-project-description">
+                                Aplicación web para entrenadores deportivos que permite gestionar clientes, rutinas y seguimiento de progreso.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cv-project-tech">
+                        <span>Django</span>
+                        <span>React</span>
+                        <span>PostgreSQL</span>
+                    </div>
+                </div>
+
+                <div class="cv-project-item">
+                    <div class="cv-project-header">
+                        <div>
+                            <h3 class="cv-project-title">Software para Verdulería</h3>
+                            <p class="cv-project-description">
+                                Sistema de gestión para verdulería con integración de puerto serial para balanza y control de inventario.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cv-project-tech">
+                        <span>Flask</span>
+                        <span>React</span>
+                        <span>MySQL</span>
+                    </div>
+                </div>
+
+                <div class="cv-project-item">
+                    <div class="cv-project-header">
+                        <div>
+                            <h3 class="cv-project-title">E-commerce con IA</h3>
+                            <p class="cv-project-description">
+                                Plataforma de comercio electrónico completa con pasarela de pagos, sistema de envíos e integración de inteligencia artificial. <strong>En desarrollo.</strong>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="cv-project-tech">
+                        <span>Django</span>
+                        <span>PostgreSQL</span>
+                        <span>IA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <a href="https://github.com/joninet" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://www.linkedin.com/in/jonathan-desplats/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:jon.desplats@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p>&copy; 2024 Jonathan Desplats. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Función para descargar PDF
+        function downloadPDF() {
+            // Usar la API de impresión del navegador para generar PDF
+            window.print();
+        }
+
+        // También agregar funcionalidad adicional si es necesario
+        document.addEventListener('DOMContentLoaded', function() {
+            // Inicializar cualquier funcionalidad adicional aquí
+            console.log('CV cargado correctamente');
+        });
+    </script>
+</body>
+</html>
