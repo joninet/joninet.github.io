@@ -137,6 +137,30 @@ nav {
     background: rgba(0, 0, 0, 0.4);
 }
 
+/* Background image for the first carousel slide (cover full area) */
+.carousel-slide:first-child {
+    background-image: url('imagenes/img3.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Background image for the second carousel slide */
+.carousel-slide:nth-child(2) {
+    background-image: url('imagenes/img4.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Background image for the third carousel slide */
+.carousel-slide:nth-child(3) {
+    background-image: url('imagenes/img5.avif');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 .carousel-content {
     position: relative;
     z-index: 1;
