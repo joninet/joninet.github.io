@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jonathan Desplats | Backend Developer</title>
+    <title>Jonathan Desplats | Backend Developer Python</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -17,8 +17,8 @@
                 <li><a href="#sobre-mi">Sobre Mí</a></li>
                 <li><a href="#habilidades">Habilidades</a></li>
                 <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="curriculum.html">Curriculum</a></li>
                 <li><a href="#contacto">Contacto</a></li>
+                <li><a href="cv.html" target="_blank" class="nav-cv-btn"><i class="fas fa-file-alt"></i> Ver CV</a></li>
             </ul>
             <div class="menu-toggle" id="menuToggle">
                 <span></span>
@@ -28,25 +28,29 @@
         </div>
     </nav>
 
-    <!-- Carousel -->
+    <!-- Hero / Carousel -->
     <section id="inicio" class="carousel">
         <div class="carousel-container" id="carouselContainer">
             <div class="carousel-slide">
                 <div class="carousel-content">
-                    <h1>Backend Developer</h1>
-                    <p>Python | Django | PostgreSQL</p>
+                    <h1>Backend Developer Python</h1>
+                    <p>FastAPI · TimescaleDB · AWS · Docker</p>
+                    <div class="hero-buttons">
+                        <a href="#proyectos" class="hero-btn primary">Ver Proyectos</a>
+                        <a href="cv.html" target="_blank" class="hero-btn secondary"><i class="fas fa-download"></i> Descargar CV</a>
+                    </div>
                 </div>
             </div>
             <div class="carousel-slide">
                 <div class="carousel-content">
-                    <h1>Técnico en Desarrollo de Software</h1>
-                    <p>Construyendo el futuro del desarrollo de aplicaciones</p>
+                    <h1>Sistemas en Producción</h1>
+                    <p>Arquitectura multi-tenant · IoT · Tiempo Real</p>
                 </div>
             </div>
             <div class="carousel-slide">
                 <div class="carousel-content">
                     <h1>Aprendizaje Continuo</h1>
-                    <p>Siempre mejorando mis habilidades</p>
+                    <p>Cloud · Inteligencia Artificial · Edge Computing</p>
                 </div>
             </div>
         </div>
@@ -64,8 +68,11 @@
             <div class="about-content">
                 <div class="about-text">
                     <h3>👋 Hola, soy Jonathan Desplats</h3>
-                    <p>Desarrollador backend apasionado por crear soluciones escalables y eficientes. Especializado en Python y Django, siempre aprendiendo nuevas tecnologías y buscando oportunidades para crecer profesionalmente.</p>
-                    <p>Recientemente graduado como Técnico en Desarrollo de Software, combino mi experiencia en liderazgo de equipos con mis habilidades técnicas para crear aplicaciones robustas que resuelvan problemas reales.</p>
+                    <p>Desarrollador con foco en <strong>backend Python</strong> y experiencia en sistemas reales desplegados en producción. He trabajado en arquitecturas multi-tenant, APIs REST con FastAPI, integración de servicios cloud en AWS y bases de datos de series de tiempo con TimescaleDB.</p>
+                    <p>Me desenvuelvo con soltura en frontend con React, aunque mi mayor solidez está en el backend. Aporto además más de 15 años de experiencia en gestión de equipos y operaciones, lo que me da una perspectiva práctica orientada a resultados.</p>
+                    <div class="about-actions">
+                        <a href="cv.html" target="_blank" class="btn"><i class="fas fa-file-alt"></i> Ver Curriculum</a>
+                    </div>
                 </div>
                 <div class="info-grid">
                     <div class="info-item">
@@ -76,17 +83,10 @@
                         </div>
                     </div>
                     <div class="info-item">
-                        <i class="fas fa-birthday-cake"></i>
-                        <div>
-                            <strong>Fecha Nacimiento</strong>
-                            <p>07-09-1987</p>
-                        </div>
-                    </div>
-                    <div class="info-item">
                         <i class="fas fa-briefcase"></i>
                         <div>
                             <strong>Disponibilidad</strong>
-                            <p>Backend Junior Developer</p>
+                            <p>Backend Developer · Freelance</p>
                         </div>
                     </div>
                     <div class="info-item">
@@ -94,6 +94,13 @@
                         <div>
                             <strong>Educación</strong>
                             <p>Técnico en Desarrollo de Software</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-code-branch"></i>
+                        <div>
+                            <strong>GitHub</strong>
+                            <p><a href="https://github.com/joninet" target="_blank" style="color: var(--primary);">github.com/joninet</a></p>
                         </div>
                     </div>
                 </div>
@@ -106,64 +113,84 @@
         <div class="container">
             <h2 class="section-title">Habilidades Técnicas</h2>
             <div class="skills-grid">
+
                 <div class="skill-card">
                     <i class="fab fa-python"></i>
                     <h3>Backend</h3>
                     <div class="skill-tags">
                         <span class="tag">Python</span>
+                        <span class="tag">FastAPI</span>
                         <span class="tag">Django</span>
                         <span class="tag">Django REST Framework</span>
                         <span class="tag">Flask</span>
+                        <span class="tag">WebSockets</span>
+                        <span class="tag">REST APIs</span>
                     </div>
                 </div>
+
                 <div class="skill-card">
                     <i class="fas fa-database"></i>
                     <h3>Bases de Datos</h3>
                     <div class="skill-tags">
                         <span class="tag">PostgreSQL</span>
+                        <span class="tag">TimescaleDB</span>
                         <span class="tag">MySQL</span>
-                        <span class="tag">SQLite</span>
+                        <span class="tag">Redis</span>
+                        <span class="tag">Alembic</span>
                     </div>
                 </div>
+
                 <div class="skill-card">
-                    <i class="fas fa-tools"></i>
-                    <h3>Herramientas</h3>
+                    <i class="fab fa-aws"></i>
+                    <h3>Cloud & Infraestructura</h3>
                     <div class="skill-tags">
-                        <span class="tag">Git</span>
-                        <span class="tag">GitHub</span>
                         <span class="tag">Docker</span>
+                        <span class="tag">AWS ECS</span>
+                        <span class="tag">AWS ECR</span>
+                        <span class="tag">Route53</span>
+                        <span class="tag">Secrets Manager</span>
+                        <span class="tag">AWS Bedrock</span>
                         <span class="tag">Linux</span>
                     </div>
                 </div>
+
                 <div class="skill-card">
                     <i class="fas fa-code"></i>
-                    <h3>Frontend (Básico)</h3>
+                    <h3>Frontend</h3>
                     <div class="skill-tags">
+                        <span class="tag">React</span>
+                        <span class="tag">JavaScript</span>
                         <span class="tag">HTML</span>
                         <span class="tag">CSS</span>
-                        <span class="tag">JavaScript</span>
-                        <span class="tag">React</span>
+                    </div>
+                    <p class="skill-note">Me desenvuelvo bien, foco principal en backend.</p>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fas fa-network-wired"></i>
+                    <h3>Otros</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Git</span>
+                        <span class="tag">MQTT</span>
+                        <span class="tag">SendGrid</span>
+                        <span class="tag">Integración LLMs</span>
+                        <span class="tag">Multi-tenant</span>
+                        <span class="tag">Edge Computing</span>
                     </div>
                 </div>
+
                 <div class="skill-card">
                     <i class="fas fa-users"></i>
                     <h3>Habilidades Blandas</h3>
                     <div class="skill-tags">
-                        <span class="tag">Trabajo en equipo</span>
                         <span class="tag">Liderazgo</span>
+                        <span class="tag">Trabajo en equipo</span>
                         <span class="tag">Resolución de problemas</span>
                         <span class="tag">Adaptabilidad</span>
-                    </div>
-                </div>
-                <div class="skill-card">
-                    <i class="fas fa-network-wired"></i>
-                    <h3>APIs & Otros</h3>
-                    <div class="skill-tags">
-                        <span class="tag">API REST</span>
-                        <span class="tag">Inglés básico</span>
                         <span class="tag">Aprendizaje continuo</span>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -173,19 +200,27 @@
         <div class="container">
             <h2 class="section-title">Proyectos Destacados</h2>
             <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">
-                        <i class="fas fa-plane-departure"></i>
+
+                <!-- AIM SCADA - proyecto destacado -->
+                <div class="project-card project-featured">
+                    <div class="project-img" style="background: linear-gradient(135deg, #1B3A5C 0%, #2E6DA4 100%);">
+                        <i class="fas fa-industry"></i>
+                        <span class="project-badge">Freelance · En producción</span>
                     </div>
                     <div class="project-content">
-                        <h3>Sistema de Gestión de Aerolínea</h3>
-                        <p>Sistema completo para la gestión de vuelos, reservas y pasajeros desarrollado como proyecto académico.</p>
+                        <h3>AIM SCADA Platform</h3>
+                        <p>Plataforma industrial IoT multi-tenant para monitoreo SCADA en tiempo real. Incluye telemetría edge, motor de alarmas, asistente IA y reportes automáticos. Lanzamiento: Julio 2026.</p>
                         <div class="project-tech">
-                            <span class="tech-tag">Django</span>
-                            <span class="tech-tag">SQLite</span>
-                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">FastAPI</span>
+                            <span class="tech-tag">TimescaleDB</span>
+                            <span class="tech-tag">Redis</span>
+                            <span class="tech-tag">AWS ECS</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">MQTT</span>
+                            <span class="tech-tag">WebSockets</span>
+                            <span class="tech-tag">AWS Bedrock</span>
                         </div>
-                        <a href="#" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
+                        <a href="#contacto" class="project-link">Consultar <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
 
@@ -211,7 +246,7 @@
                     </div>
                     <div class="project-content">
                         <h3>Software para Verdulería</h3>
-                        <p>Sistema de gestión para verdulería con integración de puerto serial para balanza y control de inventario.</p>
+                        <p>Sistema de gestión con control de stock e integración de balanza por puerto serial.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Flask</span>
                             <span class="tech-tag">React</span>
@@ -226,16 +261,16 @@
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <div class="project-content">
-                        <h3>E-commerce con IA</h3>
-                        <p>Plataforma de comercio electrónico completa con pasarela de pagos, sistema de envíos e integración de inteligencia artificial. <strong>En desarrollo.</strong></p>
+                        <h3>Ecommerce</h3>
+                        <p>Tienda online completa con carrito, gestión de órdenes y panel de administración.</p>
                         <div class="project-tech">
                             <span class="tech-tag">Django</span>
                             <span class="tech-tag">PostgreSQL</span>
-                            <span class="tech-tag">IA</span>
                         </div>
                         <a href="#" class="project-link">Ver proyecto <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -257,11 +292,11 @@
                     </div>
                     <div class="contact-item">
                         <div class="contact-icon">
-                            <i class="fas fa-phone"></i>
+                            <i class="fab fa-whatsapp"></i>
                         </div>
                         <div class="contact-details">
-                            <h4>Teléfono</h4>
-                            <a href="https://wa.me/543584642446" target="_blank">11-358 4249046</a>
+                            <h4>WhatsApp</h4>
+                            <a href="https://wa.me/543584642446" target="_blank">+54 358 4642446</a>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -313,9 +348,11 @@
             <a href="https://github.com/joninet" target="_blank"><i class="fab fa-github"></i></a>
             <a href="https://www.linkedin.com/in/jonathan-desplats/" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="mailto:jon.desplats@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="cv.html" target="_blank" title="Ver CV"><i class="fas fa-file-alt"></i></a>
         </div>
-        <p>&copy; 2024 Jonathan Desplats. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Jonathan Desplats. Todos los derechos reservados.</p>
     </footer>
 
     <script src="script.js"></script>
+</body>
 </html>

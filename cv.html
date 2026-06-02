@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CV — Jonathan Desplats</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --accent:    #1B3A5C;
+      --accent2:   #2E6DA4;
+      --light:     #F2F6FA;
+      --border:    #D6E4F0;
+      --text:      #222831;
+      --muted:     #5A6A7A;
+      --white:     #FFFFFF;
+    }
+
+    body {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      font-size: 9.5pt;
+      color: var(--text);
+      background: #E8EEF4;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 24px 0;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      background: var(--white);
+      display: grid;
+      grid-template-columns: 68mm 1fr;
+      box-shadow: 0 4px 32px rgba(0,0,0,0.18);
+    }
+
+    /* ── COLUMNA IZQUIERDA ───────────────────────── */
+    .left {
+      background: var(--accent);
+      padding: 32px 20px 32px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .avatar-wrap {
+      display: flex;
+      justify-content: center;
+    }
+
+    .avatar {
+      width: 88px;
+      height: 88px;
+      border-radius: 50%;
+      background: var(--accent2);
+      border: 3px solid rgba(255,255,255,0.25);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28pt;
+      color: var(--white);
+      font-weight: 700;
+      letter-spacing: -1px;
+    }
+
+    .left-section-title {
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid rgba(255,255,255,0.12);
+    }
+
+    /* Contacto */
+    .contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      color: rgba(255,255,255,0.85);
+      font-size: 8.5pt;
+      line-height: 1.4;
+    }
+
+    .contact-list .icon {
+      flex-shrink: 0;
+      width: 14px;
+      text-align: center;
+      color: rgba(255,255,255,0.45);
+      margin-top: 1px;
+    }
+
+    .contact-list a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+    }
+
+    /* Skills */
+    .skill-group {
+      margin-bottom: 12px;
+    }
+
+    .skill-group-name {
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: rgba(255,255,255,0.55);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+
+    .tag {
+      background: rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.88);
+      padding: 2px 7px;
+      border-radius: 3px;
+      font-size: 7.5pt;
+      font-weight: 400;
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+
+    .tag.highlight {
+      background: rgba(255,255,255,0.18);
+      font-weight: 600;
+    }
+
+    /* Educación */
+    .edu-item {
+      color: rgba(255,255,255,0.85);
+      font-size: 8.5pt;
+      line-height: 1.5;
+    }
+
+    .edu-item .year {
+      display: inline-block;
+      background: var(--accent2);
+      color: var(--white);
+      font-size: 7pt;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 3px;
+      margin-bottom: 3px;
+    }
+
+    .edu-item .degree {
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    /* Soft skills */
+    .soft-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+
+    .soft-tag {
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.80);
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 7.5pt;
+      border: 1px solid rgba(255,255,255,0.14);
+    }
+
+    /* ── COLUMNA DERECHA ─────────────────────────── */
+    .right {
+      padding: 32px 28px 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    .header-name {
+      font-size: 22pt;
+      font-weight: 700;
+      color: var(--accent);
+      line-height: 1.1;
+      letter-spacing: -0.5px;
+    }
+
+    .header-title {
+      font-size: 9.5pt;
+      font-weight: 500;
+      color: var(--accent2);
+      margin-top: 3px;
+      letter-spacing: 0.3px;
+    }
+
+    .header-divider {
+      width: 40px;
+      height: 3px;
+      background: var(--accent2);
+      border-radius: 2px;
+      margin-top: 10px;
+    }
+
+    /* Secciones derechas */
+    .section {}
+
+    .section-title {
+      font-size: 8pt;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .section-title::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 14px;
+      background: var(--accent2);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    /* Perfil */
+    .profile-text {
+      font-size: 8.8pt;
+      line-height: 1.65;
+      color: var(--muted);
+    }
+
+    /* Experiencia */
+    .exp-item {
+      margin-bottom: 16px;
+    }
+
+    .exp-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 8px;
+      margin-bottom: 2px;
+    }
+
+    .exp-title {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .exp-date {
+      font-size: 7.5pt;
+      color: var(--accent2);
+      font-weight: 600;
+      background: var(--light);
+      padding: 2px 7px;
+      border-radius: 3px;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .exp-company {
+      font-size: 8.5pt;
+      color: var(--accent2);
+      font-weight: 500;
+      margin-bottom: 7px;
+    }
+
+    .exp-launch {
+      display: inline-block;
+      font-size: 7pt;
+      font-weight: 600;
+      color: var(--white);
+      background: var(--accent2);
+      padding: 1px 6px;
+      border-radius: 3px;
+      margin-left: 6px;
+    }
+
+    .exp-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .exp-bullets li {
+      font-size: 8.3pt;
+      color: var(--muted);
+      line-height: 1.55;
+      padding-left: 12px;
+      position: relative;
+    }
+
+    .exp-bullets li::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: var(--accent2);
+      font-size: 7pt;
+      top: 1px;
+    }
+
+    .exp-bullets li strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    /* Proyectos */
+    .projects-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .project-item {
+      background: var(--light);
+      border-left: 3px solid var(--accent2);
+      padding: 7px 10px;
+      border-radius: 0 4px 4px 0;
+    }
+
+    .project-name {
+      font-size: 8.5pt;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 2px;
+    }
+
+    .project-desc {
+      font-size: 7.8pt;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* ── PRINT ───────────────────────────────────── */
+    @media print {
+      body {
+        background: none;
+        padding: 0;
+      }
+      .page {
+        box-shadow: none;
+        width: 210mm;
+        min-height: 297mm;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ══ COLUMNA IZQUIERDA ══════════════════════════ -->
+  <aside class="left">
+
+    <div class="avatar-wrap">
+      <div class="avatar">JD</div>
+    </div>
+
+    <!-- Contacto -->
+    <div>
+      <div class="left-section-title">Contacto</div>
+      <ul class="contact-list">
+        <li>
+          <span class="icon">✉</span>
+          <span>jon.desplats@gmail.com</span>
+        </li>
+        <li>
+          <span class="icon">☎</span>
+          <span>358 - 4642446</span>
+        </li>
+        <li>
+          <span class="icon">⌖</span>
+          <span>Río Cuarto, Córdoba</span>
+        </li>
+        <li>
+          <span class="icon">⌥</span>
+          <a href="https://github.com/joninet">github.com/joninet</a>
+        </li>
+        <li>
+          <span class="icon">in</span>
+          <a href="https://linkedin.com/in/jonathandesplats">linkedin.com/in/<br>jonathandesplats</a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Stack técnico -->
+    <div>
+      <div class="left-section-title">Stack Técnico</div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Backend</div>
+        <div class="skill-tags">
+          <span class="tag highlight">Python</span>
+          <span class="tag highlight">FastAPI</span>
+          <span class="tag">Django</span>
+          <span class="tag">DRF</span>
+          <span class="tag">Flask</span>
+          <span class="tag">REST APIs</span>
+          <span class="tag">WebSockets</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Bases de datos</div>
+        <div class="skill-tags">
+          <span class="tag highlight">PostgreSQL</span>
+          <span class="tag highlight">TimescaleDB</span>
+          <span class="tag">MySQL</span>
+          <span class="tag">Redis</span>
+          <span class="tag">Alembic</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Cloud & Infra</div>
+        <div class="skill-tags">
+          <span class="tag highlight">Docker</span>
+          <span class="tag">AWS ECS</span>
+          <span class="tag">AWS ECR</span>
+          <span class="tag">Route53</span>
+          <span class="tag">Secrets Mgr</span>
+          <span class="tag">AWS Bedrock</span>
+          <span class="tag">Linux</span>
+          <span class="tag">Git</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Frontend</div>
+        <div class="skill-tags">
+          <span class="tag">React</span>
+          <span class="tag">JavaScript</span>
+          <span class="tag">HTML</span>
+          <span class="tag">CSS</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-name">Otros</div>
+        <div class="skill-tags">
+          <span class="tag">MQTT</span>
+          <span class="tag">SendGrid</span>
+          <span class="tag">LLMs / IA</span>
+          <span class="tag">multi-tenant</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Educación -->
+    <div>
+      <div class="left-section-title">Educación</div>
+      <div class="edu-item">
+        <span class="year">2025</span>
+        <div class="degree">Técnico en Desarrollo<br>de Software</div>
+      </div>
+    </div>
+
+    <!-- Idiomas -->
+    <div>
+      <div class="left-section-title">Idiomas</div>
+      <ul class="contact-list">
+        <li>
+          <span class="icon">—</span>
+          <span>Español — nativo</span>
+        </li>
+        <li>
+          <span class="icon">—</span>
+          <span>Inglés técnico — lectura</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Soft skills -->
+    <div>
+      <div class="left-section-title">Habilidades</div>
+      <div class="soft-tags">
+        <span class="soft-tag">Liderazgo</span>
+        <span class="soft-tag">Trabajo en equipo</span>
+        <span class="soft-tag">Resolución de problemas</span>
+        <span class="soft-tag">Adaptabilidad</span>
+        <span class="soft-tag">Aprendizaje continuo</span>
+        <span class="soft-tag">Orientado a resultados</span>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ══ COLUMNA DERECHA ════════════════════════════ -->
+  <main class="right">
+
+    <!-- Header -->
+    <div>
+      <div class="header-name">Jonathan<br>Desplats</div>
+      <div class="header-title">Desarrollador Backend Python &nbsp;·&nbsp; Fullstack Jr</div>
+      <div class="header-divider"></div>
+    </div>
+
+    <!-- Perfil -->
+    <div class="section">
+      <div class="section-title">Perfil</div>
+      <p class="profile-text">
+        Desarrollador con foco en <strong>backend Python</strong> y experiencia en sistemas reales en desarrollo activo.
+        He trabajado en arquitecturas multi-tenant, APIs REST con FastAPI, integración de servicios cloud en AWS
+        y bases de datos de series de tiempo con TimescaleDB. Me desenvuelvo con soltura en frontend con React,
+        aunque mi mayor solidez está en el backend. Aporto además más de 15 años de experiencia en gestión de equipos
+        y operaciones logísticas, lo que me da una perspectiva práctica y orientada a resultados.
+      </p>
+    </div>
+
+    <!-- Experiencia -->
+    <div class="section">
+      <div class="section-title">Experiencia</div>
+
+      <!-- AIM SCADA -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">
+            Desarrollador Backend
+            <span class="exp-launch">Lanzamiento: Jul 2026</span>
+          </div>
+          <div class="exp-date">Ene 2026 – Actualidad</div>
+        </div>
+        <div class="exp-company">AIM SCADA Platform &nbsp;·&nbsp; Freelance</div>
+        <ul class="exp-bullets">
+          <li>
+            Diseñé la arquitectura <strong>multi-tenant con schema-per-tenant en TimescaleDB compartida</strong>,
+            eliminando instancias RDS por cliente y reduciendo costos de infraestructura.
+          </li>
+          <li>
+            Desarrollé el backend completo con <strong>FastAPI</strong>: autenticación JWT, WebSockets
+            para telemetría en tiempo real, motor de alarmas con notificaciones por email y reportes PDF programados.
+          </li>
+          <li>
+            Integré <strong>AWS Bedrock (Claude)</strong> como asistente IA configurable por tenant
+            con contexto industrial personalizado.
+          </li>
+          <li>
+            Implementé stack de <strong>Edge Computing IoT</strong>: broker MQTT (Mosquitto), buffer local
+            con store-and-forward al backend central vía sincronización periódica.
+          </li>
+          <li>
+            Gestioné el ciclo completo de infraestructura: <strong>Docker, ECR, ECS, Route53,
+            AWS Secrets Manager</strong>, deploy automatizado con scripts bash.
+          </li>
+        </ul>
+      </div>
+
+      <!-- Panificadora -->
+      <div class="exp-item">
+        <div class="exp-header">
+          <div class="exp-title">Líder de Almacén</div>
+          <div class="exp-date">Jul 2009 – Actualidad</div>
+        </div>
+        <div class="exp-company">Panificadora Veneziana &nbsp;·&nbsp; Jornada completa · Río Cuarto</div>
+        <ul class="exp-bullets">
+          <li>Supervisión y coordinación de operaciones logísticas y equipos de trabajo.</li>
+          <li>Control de inventarios, optimización de procesos y mejora continua operativa.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Proyectos personales -->
+    <div class="section">
+      <div class="section-title">Proyectos Personales</div>
+      <div class="projects-grid">
+
+        <div class="project-item">
+          <div class="project-name">ActivaPro</div>
+          <div class="project-desc">Aplicación para gestión de entrenadores personales y sus alumnos. Django + React.</div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-name">Software para Verdulería</div>
+          <div class="project-desc">Sistema de gestión de stock y ventas. Flask + React + MySQL.</div>
+        </div>
+
+        <div class="project-item">
+          <div class="project-name">Ecommerce</div>
+          <div class="project-desc">Tienda online completa con carrito, órdenes y panel de administración. Django + PostgreSQL.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </main>
+</div>
+</body>
+</html>

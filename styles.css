@@ -561,6 +561,116 @@ footer {
     transform: scale(1.1);
 }
 
+/* Nav CV button */
+.nav-cv-btn {
+    background: var(--gradient);
+    padding: 0.4rem 1rem !important;
+    border-radius: 20px;
+    font-size: 0.85rem !important;
+    transition: opacity 0.3s, transform 0.3s !important;
+}
+
+.nav-cv-btn:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+.nav-cv-btn::after {
+    display: none !important;
+}
+
+/* Hero buttons */
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem 1.8rem;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-btn.primary {
+    background: var(--white);
+    color: var(--primary-dark);
+}
+
+.hero-btn.secondary {
+    background: transparent;
+    color: var(--white);
+    border: 2px solid rgba(255,255,255,0.7);
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* About actions */
+.about-actions {
+    margin-top: 1.5rem;
+}
+
+/* Skill note */
+.skill-note {
+    margin-top: 0.8rem;
+    font-size: 0.82rem;
+    color: var(--primary);
+    font-style: italic;
+}
+
+/* Featured project */
+.project-featured {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+}
+
+.project-featured .project-img {
+    height: auto;
+    min-height: 200px;
+    position: relative;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.project-badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.35);
+    backdrop-filter: blur(4px);
+}
+
+@media (max-width: 768px) {
+    .project-featured {
+        grid-column: auto;
+        grid-template-columns: 1fr;
+    }
+
+    .project-featured .project-img {
+        height: 200px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 /* Animations */
 @keyframes fadeInUp {
     from {
